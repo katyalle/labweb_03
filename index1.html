@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме — Лехман Катерина</title>
+
+    <!-- СПОСІБ 1, зовнішній: основні правила лежать у styles.css -->
+    <link rel="stylesheet" href="src/components/styles.css">
+
+    <!-- СПОСІБ 2, внутрішній: стилі всередині HTML -->
+    <style>
+        .skills li {
+            list-style: square;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top">
+        <!-- СПОСІБ 3, вбудований (inline): стиль прямо в тегу -->
+        <h1 style="letter-spacing: 2px;">Лехман Катерина</h1>
+        <p>Студентка спеціальності «Кібербезпека»</p>
+        <ul class="contacts">
+            <li><b>Вік:</b> 18 років</li>
+            <li><b>Місто:</b> Ужгород / Львів</li>
+            <li><b>Email:</b> <a href="mailto:katyalekhman@gmail.com">katyalekhman@gmail.com</a></li>
+            <li><b>GitHub:</b> <a href="https://github.com/katyalle" target="_blank">github.com/katyalle</a></li>
+           
+        </ul>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <section class="card">
+                <h2>Технічні навички</h2>
+                <ul class="skills">
+                    <li>Python 3</li>
+                    <li>Основи PEP 8 / Ruff</li>
+                    <li>Linux / PowerShell</li>
+                    <li>Git / GitHub</li>
+                    <li>Мережеві протоколи</li>
+                    <li>Основи криптографії</li>
+                    <li>HTML / CSS</li>
+                    <li>VS Code</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Мови</h2>
+                <ul>
+                    <li><b>Українська:</b> Рідна</li>
+                    <li><b>Англійська:</b> Intermediate (B1/B2)</li>
+                </ul>
+            </section>
+        </aside>
+
+        <main class="content">
+            <section class="card" id="about">
+                <h2>Про мене</h2>
+                <p>Студентка Національного університету «Львівська політехніка». Захоплююся практичною кібербезпекою, аналізом захищеності систем та розробкою скриптів для автоматизації безпекових завдань.</p>
+            </section>
+
+            <section class="card" id="education">
+                <h2>Освіта</h2>
+                <p><b>Національний університет «Львівська політехніка» (НУЛП)</b></p>
+                <p>Спеціальність 125 «Кібербезпека та захист інформації»</p>
+                <p>2025 — Теперішній час</p>
+            </section>
+
+            <section class="card" id="projects">
+                <h2>Навчальні проєкти</h2>
+                <h3>Лабораторний комплекс з Python (Cybersecurity)</h3>
+                <ul>
+                    <li>Розробка модулів аналізу надійності паролів.</li>
+                    <li>Реалізація системи розмежування прав доступу користувачів (RBAC) з обробкою JSON/CSV даних.</li>
+                    <li>Імплементація базових алгоритмів шифрування.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Лехман Катерина. Резюме створено в рамках лабораторної роботи 3.</p>
+    </footer>
+
+</body>
+</html>
