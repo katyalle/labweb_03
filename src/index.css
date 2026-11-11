@@ -6,7 +6,7 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgb(0,0,0);
-  background-color:rgb(255, 255, 255);
+
 
 }
 
@@ -35,6 +35,94 @@ h1 {
 
 
 
+body.dark-mode {
+    background: #121212;
+    color: #eeeeee;
+}
+#theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 50;
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    border: 3px solid #dddddd;
+    background: black;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    #theme-toggle .knob {
+        position: absolute;
+        top: 3px;
+        left: 53px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        transition: left 0.3s;
+    }
+
+    #theme-toggle::after {
+        content: 'ON';
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: bold;
+        font-size: 14px;
+        color: white;
+        animation: fadeIn 0.3s;
+    }
+
+
+body.dark-mode #theme-toggle {
+    background: #f2f2f2;
+}
+
+    body.dark-mode #theme-toggle .knob {
+        left: 3px;
+    }
+
+    body.dark-mode #theme-toggle::after {
+        content: 'OFF';
+        left: auto;
+        right: 10px;
+        color: black;
+    }
+
+#theme-toggle::before {
+    content: 'Тема';
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: blue;
+    white-space: nowrap;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: white;
+}
+
+    body.dark-mode {
+        background-color: #121212;
+        color: #eeeeee;
+    }
 
 
 

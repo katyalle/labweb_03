@@ -5,6 +5,9 @@ import TechnicalSkills from './components/TechnicalSkills';
 import Projects from './components/Projects';
 import Languages from './components/Languages';
 import Footer from './components/Footer';
+import Reviews from './components/Reviews';
+import ContactForm from './components/ContactForm';
+import { useEffect, useState } from 'react';
 
 // Усі дані резюме передаються в компоненти через props
 const cvData = {
@@ -50,12 +53,40 @@ const cvData = {
 };
 
 function App() {
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        const hours = new Date().getHours();
+        if (hours >= 7 && hours < 21) {
+            setTheme('light');
+        } else {
+            setTheme('dark');
+        }
+    }, []);
+
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    }, [theme]);
+
+    function toggleTheme() {
+        if (theme === 'dark') {
+            setTheme('light');
+        } else {
+            setTheme('dark');
+        }
+    }
+
     return (
         <div>
             <Header
                 name={cvData.name}
                 position={cvData.position}
                 contacts={cvData.contacts}
+                onToggleTheme={toggleTheme}
             />
             <main>
                 <About text={cvData.about} />
@@ -63,6 +94,8 @@ function App() {
                 <TechnicalSkills skills={cvData.technicalSkills} />
                 <Projects title={cvData.project.title} list={cvData.project.list} />
                 <Languages languages={cvData.languages} />
+                <Reviews />
+                <ContactForm />
             </main>
             <Footer name={cvData.name} />
         </div>

@@ -21,12 +21,13 @@
         <!-- СПОСІБ 3, вбудований (inline): стиль прямо в тегу -->
         <h1 style="letter-spacing: 2px;">Лехман Катерина</h1>
         <p>Студентка спеціальності «Кібербезпека»</p>
+        <button id="theme-toggle" type="button"><span class="knob"></span></button>
         <ul class="contacts">
             <li><b>Вік:</b> 18 років</li>
             <li><b>Місто:</b> Ужгород / Львів</li>
             <li><b>Email:</b> <a href="mailto:katyalekhman@gmail.com">katyalekhman@gmail.com</a></li>
             <li><b>GitHub:</b> <a href="https://github.com/katyalle" target="_blank">github.com/katyalle</a></li>
-           
+
         </ul>
     </header>
 
@@ -77,12 +78,32 @@
                     <li>Імплементація базових алгоритмів шифрування.</li>
                 </ul>
             </section>
+            <section class="card" id="reviews">
+                <h2>Відгуки роботодавців</h2>npm
+                <p id="reviews-status">Завантаження відгуків...</p>
+                <div id="reviews-list"></div>
+            </section>
         </main>
     </div>
 
     <footer>
-        <p>Лехман Катерина. Резюме створено в рамках лабораторної роботи 3.</p>
+        <p>Лехман Катерина. Резюме створено в рамках лабораторної роботи 4.</p>
+        <h3>Інформація про систему</h3>
+        <ul id="storage-info"></ul>
     </footer>
+
+    <div id="modal" hidden>
+        <h2>Зворотний зв'язок</h2>
+        <form action="https://formspree.io/f/xjywvror" method="POST">
+            <p>Ім'я: <input type="text" name="name" required></p>
+            <p>Email: <input type="email" name="email" required></p>
+            <p>Телефон: <input type="tel" name="phone"></p>
+            <p>Повідомлення: <textarea name="message" required></textarea></p>
+            <button type="submit">Надіслати</button>
+        </form>
+        <button id="modal-close" type="button">Закрити</button>
+    </div>
+    <script src="script.js"></script>
 
 </body>
 </html>
